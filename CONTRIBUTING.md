@@ -21,7 +21,7 @@ generate the changelog:
 ```
 feat(splash): handle the 5-byte push-immediate site layout
 fix(graphics): keep the first ddraw.ini backup on re-install
-docs: clarify the untested status of the splash patch
+docs: record the runtime verification of the splash patch
 ```
 
 ## Building and testing

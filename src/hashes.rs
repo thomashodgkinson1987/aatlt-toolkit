@@ -22,8 +22,9 @@ pub const STOCK_EXE_SHA256: &str =
 
 /// SHA-256 of `AmazingAdventures.exe` after the splash patch is applied.
 ///
-/// Predicted by zeroing all eight `push 1.25` dwell immediates to `0.01f` (see
-/// `splash::SITES`); **not yet verified at runtime**.
+/// Produced by shrinking all eight `push 1.25` dwell immediates to `0.01f` (see
+/// `splash::SITES`). **Verified at runtime on 2026-11-22**: the on-disk file after applying
+/// the patch hashes to this value, and removing the patch restores `STOCK_EXE_SHA256`.
 pub const PATCHED_EXE_SHA256: &str =
     "7cf9d759869ad468ff8f17aced01e408f991dc6560be494dd6e238a8716c57f7";
 

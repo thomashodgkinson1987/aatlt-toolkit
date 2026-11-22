@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Documented the runtime verification of both features (2026-11-22): the splash patch and
+  the cnc-ddraw install were exercised on a live install, and the splash patch is no longer
+  described as "untested". No functional code change.
+
 ## [0.1.0] - 2026-11-22
 
 ### Added
@@ -30,7 +36,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Notes
 
-- The splash patch is derived from static analysis and is **untested at runtime**.
+- The splash patch is **verified at runtime (2026-11-22)**: applied to a live install, the
+  splashes flash past and the game lands on a working main menu; removing it restores the
+  pristine executable.
 - The patch deliberately writes a tiny non-zero duration (`0.01f`) rather than `0.0`,
   because the tween builder divides by the duration.
 - Unrecognised executables are refused rather than modified.
