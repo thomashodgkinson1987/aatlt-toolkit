@@ -95,8 +95,9 @@ Notes:
 - **Steam "Verify integrity of game files" will undo the splash patch** (the EXE is part of
   the Steam manifest). Just run `splash apply` again afterwards.
 
-- The splash patch is **untested at runtime** as of this writing: the patch was derived from
-  static analysis and has not yet been exercised on a live install. See the
+- The splash patch is **verified at runtime (2026-11-22)**: applied to a live install, the
+  splashes flash past and the game lands on a working main menu; `splash remove` restores
+  the pristine executable. See the
   [wiki](https://github.com/thomashodgkinson1987/aatlt-wiki) for the full analysis and the
   test plan.
 

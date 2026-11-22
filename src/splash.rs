@@ -14,6 +14,10 @@
 //!
 //! Each inner-game `push` at VA `X` lives at wrapper file offset
 //! `OVERLAY_OFFSET + (X - 0x400000)`. See the wiki's va-file-offset-mapping.
+//!
+//! The patch is **verified at runtime (2026-11-22)**: applied to a live install, the
+//! splashes flash past and the game lands on a working main menu; removing it restores the
+//! pristine executable.
 
 use anyhow::{Context, Result, bail};
 use std::path::{Path, PathBuf};
@@ -26,8 +30,9 @@ pub const BACKUP_SUFFIX: &str = ".aatlt-orig";
 /// The patched immediate: `0.01f` (`0x3c23d70a`), little-endian.
 ///
 /// A tiny non-zero value is used deliberately. The tween builder computes
-/// `1000.0 / duration`, so a literal `0.0` risks a divide-by-zero / broken tween. **This
-/// value and the resulting patch are `untested` at runtime.**
+/// `1000.0 / duration`, so a literal `0.0` risks a divide-by-zero / broken tween.
+/// **Verified at runtime on 2026-11-22**: the game launches, the splashes flash past, and
+/// the menu is intact.
 pub const PATCHED_IMM: [u8; 4] = [0x0a, 0xd7, 0x23, 0x3c];
 
 /// The stock immediate: `1.25f` (`0x3fa00000`), little-endian.
