@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-22
+
 ### Changed
 
 - Documented the runtime verification of both features (2026-11-22): the splash patch and
@@ -34,14 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - An apply/remove round-trip integration test (`tests/real_exe.rs`, gated on
     `AAALT_STOCK_EXE`).
 
-### Notes
-
-- The splash patch is **verified at runtime (2026-11-22)**: applied to a live install, the
-  splashes flash past and the game lands on a working main menu; removing it restores the
-  pristine executable.
-- The patch deliberately writes a tiny non-zero duration (`0.01f`) rather than `0.0`,
-  because the tween builder divides by the duration.
-- Unrecognised executables are refused rather than modified.
-
-[Unreleased]: https://github.com/thomashodgkinson1987/aatlt-toolkit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/thomashodgkinson1987/aatlt-toolkit/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/thomashodgkinson1987/aatlt-toolkit/releases/tag/v0.1.1
 [0.1.0]: https://github.com/thomashodgkinson1987/aatlt-toolkit/releases/tag/v0.1.0
