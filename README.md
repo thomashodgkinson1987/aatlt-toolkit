@@ -1,6 +1,10 @@
 # Amazing Adventures: The Lost Tomb Toolkit
 
-[![CI](https://github.com/thomashodgkinson1987/aatlt-toolkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/thomashodgkinson1987/aatlt-toolkit/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/thomashodgkinson1987/aatlt-toolkit)](https://github.com/thomashodgkinson1987/aatlt-toolkit/releases/latest) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![CI](https://github.com/thomashodgkinson1987/aatlt-toolkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/thomashodgkinson1987/aatlt-toolkit/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/thomashodgkinson1987/aatlt-toolkit)](https://github.com/thomashodgkinson1987/aatlt-toolkit/releases/latest)
+[![License: MIT](https://img.shields.io/github/license/thomashodgkinson1987/aatlt-toolkit)](LICENSE)
+[![Rust edition 2024](https://img.shields.io/badge/rust-edition%202024-orange)](https://doc.rust-lang.org/edition-guide/rust-2024/)
+[![Platforms](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macOS-blue)](#downloads)
 
 A small cross-platform terminal helper for the Steam title **Amazing Adventures: The
 Lost Tomb** (Steam AppID **3510**). It does two things, each fully reversible:
