@@ -1,0 +1,32 @@
+[package]
+name = "aatlt-toolkit"
+version = "0.1.0"
+edition = "2024"
+description = "Install cnc-ddraw and apply/remove the startup-splash skip for Amazing Adventures The Lost Tomb (Steam AppID 3510)."
+authors = ["Thomas Hodgkinson <thomashodgkinson1987@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/thomashodgkinson1987/aatlt-toolkit"
+keywords = ["steam", "proton", "cnc-ddraw", "patcher", "cli"]
+categories = ["command-line-utilities", "games"]
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.9", features = ["derive"] }
+console = "0.16.6"
+hex = "0.4.3"
+indicatif = "0.18.6"
+inquire = "0.9.5"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sha2 = "0.11.1"
+time = { version = "0.3.55", features = ["formatting"] }
+ureq = { version = "3.5.2", features = ["json"] }
+# cnc-ddraw's release zip only uses plain deflate, and we only ever *read* zips, so
+# enable just the pure-Rust flate2/zlib-rs reader. Dropping the default features removes
+# zstd/bzip2/lzma/aes/deflate64 and the zopfli compressor (plus their C toolchains),
+# which shrinks the binary and lets the Linux targets build statically against musl.
+zip = { version = "9.8.1", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+
+[dev-dependencies]
+tempfile = "3.27.0"
